@@ -13,7 +13,7 @@ This project implements a simple Dark Mode Toggle using React and CSS. It provid
 1. Clone the repository:
 
    ```bash
-   git clone 
+   git clone https://github.com/tahaesii/dark-mode-toggle.git
    ```
 
 2. Navigate to the project directory:
