@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+# Dark Mode Toggle
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements a simple Dark Mode Toggle using React and CSS. It provides an elegant way for users to switch between light and dark themes, with the chosen preference saved in the browser's `localStorage` for persistence across sessions.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Dark Mode Toggle**: Allows users to switch between light and dark themes.
+- **Persistence**: The selected theme is saved in `localStorage`, so it remains consistent even after the page is reloaded.
+- **Smooth Transitions**: CSS transitions ensure a visually pleasing experience when switching themes.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Clone the repository:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   ```bash
+   git clone 
+   ```
 
-### `npm test`
+2. Navigate to the project directory:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   cd dark-mode-toggle
+   ```
 
-### `npm run build`
+3. Install dependencies (if needed):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Include the `DarkModeToggle` component in your React application:
 
-### `npm run eject`
+   ```javascript
+   import { DarkModeToggle as Control } from "./controls/darkModeRadioBtn/DarkModeToggle";
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   function App() {
+     return (
+       <div>
+         <Control />
+       </div>
+     );
+   }
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   export default App;
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Customize styles by modifying the `styles.css` file.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Run your application:
 
-## Learn More
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Code Overview
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Component
+
+The `DarkModeToggle` component uses the following key functionalities:
+
+- **useEffect**: Ensures the dark mode class is applied on the initial render if it exists in `localStorage`.
+- **handleToggled**: Toggles the `dark` class on the `body` element and updates the `localStorage` with the current theme.
+
+### CSS
+
+- Variables `--color-dark` and `--color-light` are used to define the primary colors for dark and light themes.
+- Transitions are implemented to create a smooth switch effect.
+
+## CSS Classes
+
+- **`:root`**: Declares theme variables.
+- **`body`**: Sets the default background color and applies transitions.
+- **`body.dark`**: Defines the dark mode styles.
+- **`.switch`**: Styles the toggle switch container.
+- **`.handle`**: Styles the toggle switch handle with smooth animations.
